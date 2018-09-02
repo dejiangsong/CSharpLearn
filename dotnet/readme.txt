@@ -1,2 +1,0 @@
-Demo_ConnectMysql：
-	使用C#通过Nibernate的ORM映射Mysql
