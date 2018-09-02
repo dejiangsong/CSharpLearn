@@ -1,0 +1,78 @@
+﻿body {
+    padding-top: 70px;
+    background-color: #f0f0f0 !important;
+}
+
+a {
+    color: #6e9664;
+}
+
+    a:hover {
+        color: #b4c83c;
+    }
+
+label.error:not(.form-control) {
+    color: #EB5E28;
+    font-weight: 300;
+    font-size: 0.8em;
+}
+
+::-webkit-selection {
+    color: #fff;
+    background: #6e9664;
+}
+
+::-moz-selection {
+    color: #fff;
+    background: #6e9664;
+}
+
+::selection {
+    color: #fff;
+    background: #6e9664;
+}
+
+/****************************************************/
+
+/* login start */
+/* register */
+.myform {
+    width: 100%;
+}
+
+.btn-login {
+    width: 100%;
+}
+/* login end */
+
+/* table start */
+.table-header a {
+    color: #2c2c2c;
+}
+/* table end */
+
+/* padding/margin start */
+.my-padding-left {
+    padding-left: 15px;
+}
+
+.my-padding-right {
+    padding-right: 15px;
+}
+
+.my-margin-left {
+    margin-left: 15px;
+}
+
+.my-margin-right {
+    margin-right: 15px;
+}
+
+.my-padding-left-0 {
+    padding-left: 0px;
+}
+
+.my-padding-right-0 {
+    padding-right: 0px;
+}
+/* padding/margin end */

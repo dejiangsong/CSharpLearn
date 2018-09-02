@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPagers/Default.master" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="MasterPagers_User" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+
+    <aside>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="card">
+                        <a data-toggle="collapse" href="#menuCollapse">
+                            <div class="card-action text-center">
+                                <asp:Image ID="Head_Image" CssClass="img-responsive" ImageUrl="~/App_Themes/Default/img/fileUpload_real.png" runat="server" />
+                            </div>
+                        </a>
+
+                        <!-- BUG 第一次点击不能收回的bug -->
+                        <!-- 如需初始为收起状态，给下一个div添加class="collapse" -->
+                        <div id="menuCollapse">
+                            <div class="card-action text-center text-primary">
+                                个人
+                            </div>
+                            <ul class="nav nav-stacked text-center">
+                                <li>
+                                    <asp:HyperLink ID="PersonalInfo_HyperLink" runat="server" NavigateUrl="~/p/User/PersonalInfo.aspx">个人信息</asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="ChangePersonalInfo_HyperLink" runat="server" NavigateUrl="~/p/User/ChangePersonalInfo.aspx">修改信息</asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="ChangePassword_HyperLink" runat="server" NavigateUrl="~/p/User/ChangePassword.aspx">修改密码</asp:HyperLink>
+                                </li>
+                            </ul>
+                            <div class="card-action text-center text-primary">
+                                企业
+                            </div>
+                            <ul class="nav nav-stacked text-center">
+                                <li>
+                                    <asp:HyperLink ID="EnterpriseInfo_HyperLink" runat="server" NavigateUrl="~/p/User/EnterpriseInfo.aspx">企业信息</asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="ChangeEnterpriseInfo_HyperLink" runat="server" NavigateUrl="~/p/User/ChangeEnterpriseInfo.aspx">修改信息</asp:HyperLink>
+                                </li>
+                            </ul>
+                            <div class="card-action text-center text-primary">
+                                管理员
+                            </div>
+                            <ul class="nav nav-stacked text-center">
+                                <li>
+                                    <asp:LoginView ID="Administer_LoginView" runat="server">
+                                        <RoleGroups>
+                                            <asp:RoleGroup Roles="root,administer">
+                                                <ContentTemplate>
+                                                    <asp:HyperLink ID="Administer_HyperLink" runat="server" NavigateUrl="~/p/User/Administer/ChangeRole.aspx">管理员功能</asp:HyperLink>
+                                                </ContentTemplate>
+                                            </asp:RoleGroup>
+                                        </RoleGroups>
+                                    </asp:LoginView>
+                                </li>
+                            </ul>
+                            <div class="card-content">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-10">
+                    <div class="card">
+                        <section>
+                            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+                        </section>
+
+                        <div class="card-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+</asp:Content>
+

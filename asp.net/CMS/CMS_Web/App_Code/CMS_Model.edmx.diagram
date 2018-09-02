@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="904f5c1043ac457891b1db938bb2c597" Name="Diagram1">
+        <EntityTypeShape EntityType="CMSDB_Model.Users" Width="1.5" PointX="7.5" PointY="7.125" />
+        <EntityTypeShape EntityType="CMSDB_Model.CutterClass" Width="1.5" PointX="0.75" PointY="2.875" />
+        <EntityTypeShape EntityType="CMSDB_Model.CutterImages" Width="1.5" PointX="7.75" PointY="1.5" />
+        <EntityTypeShape EntityType="CMSDB_Model.CutterMaterial" Width="1.5" PointX="0.75" PointY="0.5" />
+        <EntityTypeShape EntityType="CMSDB_Model.CutterUsersGroup" Width="1.5" PointX="9.75" PointY="4" />
+        <EntityTypeShape EntityType="CMSDB_Model.CutterDetailClass" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="CMSDB_Model.Cutters" Width="1.5" PointX="3" PointY="2.375" />
+        <AssociationConnector Association="CMSDB_Model.FK_Cutters_CutterClass" />
+        <AssociationConnector Association="CMSDB_Model.FK_Cutters_CutterDetailClass" />
+        <AssociationConnector Association="CMSDB_Model.FK_Cutters_CutterMaterial" />
+        <EntityTypeShape EntityType="CMSDB_Model.Cutter3DImages" Width="1.5" PointX="7.625" PointY="4.125" />
+        <EntityTypeShape EntityType="CMSDB_Model.PersonalInfo" Width="1.5" PointX="0.5" PointY="11.625" />
+        <EntityTypeShape EntityType="CMSDB_Model.CutterElectricTestRecord" Width="1.5" PointX="3.375" PointY="7.875" />
+        <EntityTypeShape EntityType="CMSDB_Model.CutterWorkStatus" Width="1.5" PointX="10.375" PointY="0.875" />
+        <EntityTypeShape EntityType="CMSDB_Model.CuttersDetail" Width="1.5" PointX="5.375" PointY="0.875" />
+        <AssociationConnector Association="CMSDB_Model.FK_CuttersDetail_Cutters" />
+        <AssociationConnector Association="CMSDB_Model.FK_CuttersDetail_CutterWorkStatus" />
+        <EntityTypeShape EntityType="CMSDB_Model.CutterEvents" Width="1.5" PointX="5.625" PointY="5.875" />
+        <EntityTypeShape EntityType="CMSDB_Model.CutterNotes" Width="1.5" PointX="3.625" PointY="5.875" />
+        <AssociationConnector Association="CMSDB_Model.FK_CuttersDetail_CutterEvents" />
+        <AssociationConnector Association="CMSDB_Model.FK_CuttersDetail_CutterNotes" />
+        <EntityTypeShape EntityType="CMSDB_Model.CuttersInfo" Width="1.5" PointX="2.25" PointY="11.625" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

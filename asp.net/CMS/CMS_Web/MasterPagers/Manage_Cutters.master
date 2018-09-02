@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPagers/Manage.master" AutoEventWireup="true" CodeFile="Manage_Cutters.master.cs" Inherits="MasterPagers_Manage_Cutters" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+    <ul class="nav nav-tabs">
+        <li>
+            <asp:HyperLink ID="CuttersInfo_HyperLink" runat="server" NavigateUrl="~/p/Manage/Cutters/CuttersInfo.aspx">刀具信息</asp:HyperLink>
+        </li>
+        <li>
+            <asp:HyperLink ID="AddCutter_HyperLink" runat="server" NavigateUrl="~/p/Manage/Cutters/AddCutter.aspx">添加刀具</asp:HyperLink>
+        </li>
+    </ul>
+
+
+
+    <section>
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+    </section>
+
+</asp:Content>
+

@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPagers/State.master" AutoEventWireup="true" CodeFile="Machines.master.cs" Inherits="MasterPagers_Machine" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+
+    <header>
+        <asp:HyperLink ID="Machines_HyperLink" runat="server" NavigateUrl="~/p/State/Machines.aspx">机床</asp:HyperLink>
+        <asp:HyperLink ID="Cutters_HyperLink" runat="server" NavigateUrl="~/p/State/Cutters.aspx">刀具</asp:HyperLink>
+    </header>
+
+
+
+    <section>
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+    </section>
+
+</asp:Content>
+

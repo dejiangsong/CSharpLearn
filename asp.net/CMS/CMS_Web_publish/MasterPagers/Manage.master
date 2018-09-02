@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPagers/Default.master" AutoEventWireup="true" CodeFile="Manage.master.cs" Inherits="MasterPagers_Manage" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+    <div class="container">
+        <div class="row">
+            <ul class="nav nav-tabs" id="nav_tab">
+                <li>
+                    <asp:HyperLink ID="Machines_HyperLink" runat="server" NavigateUrl="~/p/Manage/Machines/Default.aspx">机床</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="Cutters_HyperLink" runat="server" NavigateUrl="~/p/Manage/Cutters/CuttersInfo.aspx">刀具</asp:HyperLink>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="row">
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+        </div>
+    </div>
+
+    <script>
+        $("#nav_tab li").click(function () {
+            $(this).addClass("active");
+            $("#nav_tab li").not($(this)).removeClass("active");
+        });
+    </script>
+</asp:Content>
+

@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPagers/State.master" AutoEventWireup="true" CodeFile="State_Cutters.master.cs" Inherits="MasterPagers_State_Cutters" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script src="/App_Themes/Default/myJS.js"></script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+
+    <ul class="nav nav-tabs">
+        <li>
+            <asp:HyperLink ID="Working_HyperLink" runat="server" NavigateUrl="~/p/State/Cutters/Work.aspx">工作中</asp:HyperLink>
+        </li>
+        <li>
+            <asp:HyperLink ID="Trouble_HyperLink" runat="server" NavigateUrl="~/p/State/Cutters/Trouble.aspx">故障</asp:HyperLink>
+        </li>
+        <li>
+            <asp:HyperLink ID="WaitPurchase_HyperLink" runat="server" NavigateUrl="~/p/State/Cutters/WaitPurchase.aspx">待采购</asp:HyperLink>
+        </li>
+    </ul>
+
+
+
+    <section>
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+    </section>
+</asp:Content>
+

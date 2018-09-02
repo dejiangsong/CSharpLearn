@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CMSDB_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cutter3DImages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ClassID" Type="int" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CutterClass">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="CutterDetailClass">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ClassID" Type="int" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="CutterElectricTestRecord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ElectricTestRecordID" Type="int" />
+          <Property Name="DateTime" Type="datetime" />
+          <Property Name="Value" Type="float" />
+          <Property Name="TestLocation" Type="nvarchar" MaxLength="100" />
+          <Property Name="DangerousValue" Type="float" />
+        </EntityType>
+        <EntityType Name="CutterEvents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Event" Type="text" />
+        </EntityType>
+        <EntityType Name="CutterImages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ImageID" Type="int" />
+          <Property Name="DateTime" Type="datetime" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CutterMaterial">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="CutterNotes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Note" Type="text" />
+        </EntityType>
+        <EntityType Name="Cutters">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="number" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClassID" Type="int" />
+          <Property Name="DetailClassID" Type="int" />
+          <Property Name="MaterialID" Type="int" />
+        </EntityType>
+        <EntityType Name="CuttersDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UsersGroupID" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="LastUseDate" Type="datetime" />
+          <Property Name="ExpectLife" Type="int" />
+          <Property Name="WearProcess" Type="float" />
+          <Property Name="WorkStatusID" Type="int" />
+          <Property Name="StartTime" Type="datetime" />
+          <Property Name="StopTime" Type="datetime" />
+          <Property Name="Location" Type="nvarchar" MaxLength="100" />
+          <Property Name="NoteID" Type="int" />
+          <Property Name="EventID" Type="int" />
+          <Property Name="ElectricTestRecordID" Type="int" />
+          <Property Name="Cutter3DImageID" Type="int" />
+          <Property Name="ImageID" Type="int" />
+        </EntityType>
+        <EntityType Name="CutterUsersGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="GroupID" Type="int" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CutterWorkStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“CMSDB.dbo.CuttersInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="CuttersInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="模型图" Type="nvarchar" MaxLength="100" />
+          <Property Name="编号" Type="nvarchar" MaxLength="50" />
+          <Property Name="类别" Type="nvarchar" MaxLength="30" />
+          <Property Name="详细类别" Type="nvarchar" MaxLength="30" />
+          <Property Name="材料" Type="nvarchar" MaxLength="30" />
+          <Property Name="实物图" Type="nvarchar" MaxLength="100" />
+          <Property Name="拍摄时间" Type="datetime" />
+          <Property Name="添加日期" Type="datetime" />
+          <Property Name="活跃日期" Type="datetime" />
+          <Property Name="预期寿命" Type="int" />
+          <Property Name="磨损进度" Type="float" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“CMSDB.dbo.PersonalInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="PersonalInfo">
+          <Key>
+            <PropertyRef Name="用户名" />
+            <PropertyRef Name="权限" />
+            <PropertyRef Name="活跃" />
+          </Key>
+          <Property Name="用户名" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="权限" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="邮箱" Type="nvarchar" MaxLength="256" />
+          <Property Name="活跃" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Cutters_CutterClass">
+          <End Role="CutterClass" Type="Self.CutterClass" Multiplicity="0..1" />
+          <End Role="Cutters" Type="Self.Cutters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CutterClass">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cutters">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cutters_CutterDetailClass">
+          <End Role="CutterDetailClass" Type="Self.CutterDetailClass" Multiplicity="0..1" />
+          <End Role="Cutters" Type="Self.Cutters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CutterDetailClass">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cutters">
+              <PropertyRef Name="DetailClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cutters_CutterMaterial">
+          <End Role="CutterMaterial" Type="Self.CutterMaterial" Multiplicity="0..1" />
+          <End Role="Cutters" Type="Self.Cutters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CutterMaterial">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cutters">
+              <PropertyRef Name="MaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CuttersDetail_CutterEvents">
+          <End Role="CutterEvents" Type="Self.CutterEvents" Multiplicity="0..1" />
+          <End Role="CuttersDetail" Type="Self.CuttersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CutterEvents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CuttersDetail">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CuttersDetail_CutterNotes">
+          <End Role="CutterNotes" Type="Self.CutterNotes" Multiplicity="0..1" />
+          <End Role="CuttersDetail" Type="Self.CuttersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CutterNotes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CuttersDetail">
+              <PropertyRef Name="NoteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CuttersDetail_Cutters">
+          <End Role="Cutters" Type="Self.Cutters" Multiplicity="1" />
+          <End Role="CuttersDetail" Type="Self.CuttersDetail" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Cutters">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CuttersDetail">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CuttersDetail_CutterWorkStatus">
+          <End Role="CutterWorkStatus" Type="Self.CutterWorkStatus" Multiplicity="0..1" />
+          <End Role="CuttersDetail" Type="Self.CuttersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CutterWorkStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CuttersDetail">
+              <PropertyRef Name="WorkStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CMSDB_ModelStoreContainer">
+          <EntitySet Name="Cutter3DImages" EntityType="Self.Cutter3DImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CutterClass" EntityType="Self.CutterClass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CutterDetailClass" EntityType="Self.CutterDetailClass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CutterElectricTestRecord" EntityType="Self.CutterElectricTestRecord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CutterEvents" EntityType="Self.CutterEvents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CutterImages" EntityType="Self.CutterImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CutterMaterial" EntityType="Self.CutterMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CutterNotes" EntityType="Self.CutterNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cutters" EntityType="Self.Cutters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CuttersDetail" EntityType="Self.CuttersDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CutterUsersGroup" EntityType="Self.CutterUsersGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CutterWorkStatus" EntityType="Self.CutterWorkStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CuttersInfo" EntityType="Self.CuttersInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[CuttersInfo].[ID] AS [ID], 
+[CuttersInfo].[模型图] AS [模型图], 
+[CuttersInfo].[编号] AS [编号], 
+[CuttersInfo].[类别] AS [类别], 
+[CuttersInfo].[详细类别] AS [详细类别], 
+[CuttersInfo].[材料] AS [材料], 
+[CuttersInfo].[实物图] AS [实物图], 
+[CuttersInfo].[拍摄时间] AS [拍摄时间], 
+[CuttersInfo].[添加日期] AS [添加日期], 
+[CuttersInfo].[活跃日期] AS [活跃日期], 
+[CuttersInfo].[预期寿命] AS [预期寿命], 
+[CuttersInfo].[磨损进度] AS [磨损进度]
+FROM [dbo].[CuttersInfo] AS [CuttersInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PersonalInfo" EntityType="Self.PersonalInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[PersonalInfo].[用户名] AS [用户名], 
+[PersonalInfo].[权限] AS [权限], 
+[PersonalInfo].[邮箱] AS [邮箱], 
+[PersonalInfo].[活跃] AS [活跃]
+FROM [dbo].[PersonalInfo] AS [PersonalInfo]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Cutters_CutterClass" Association="Self.FK_Cutters_CutterClass">
+            <End Role="CutterClass" EntitySet="CutterClass" />
+            <End Role="Cutters" EntitySet="Cutters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cutters_CutterDetailClass" Association="Self.FK_Cutters_CutterDetailClass">
+            <End Role="CutterDetailClass" EntitySet="CutterDetailClass" />
+            <End Role="Cutters" EntitySet="Cutters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cutters_CutterMaterial" Association="Self.FK_Cutters_CutterMaterial">
+            <End Role="CutterMaterial" EntitySet="CutterMaterial" />
+            <End Role="Cutters" EntitySet="Cutters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuttersDetail_CutterEvents" Association="Self.FK_CuttersDetail_CutterEvents">
+            <End Role="CutterEvents" EntitySet="CutterEvents" />
+            <End Role="CuttersDetail" EntitySet="CuttersDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuttersDetail_CutterNotes" Association="Self.FK_CuttersDetail_CutterNotes">
+            <End Role="CutterNotes" EntitySet="CutterNotes" />
+            <End Role="CuttersDetail" EntitySet="CuttersDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuttersDetail_Cutters" Association="Self.FK_CuttersDetail_Cutters">
+            <End Role="Cutters" EntitySet="Cutters" />
+            <End Role="CuttersDetail" EntitySet="CuttersDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuttersDetail_CutterWorkStatus" Association="Self.FK_CuttersDetail_CutterWorkStatus">
+            <End Role="CutterWorkStatus" EntitySet="CutterWorkStatus" />
+            <End Role="CuttersDetail" EntitySet="CuttersDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CMSDB_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CMSDB_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="CMSDB_Model.Users" />
+          <EntitySet Name="CutterClass" EntityType="CMSDB_Model.CutterClass" />
+          <EntitySet Name="CutterImages" EntityType="CMSDB_Model.CutterImages" />
+          <EntitySet Name="CutterMaterial" EntityType="CMSDB_Model.CutterMaterial" />
+          <EntitySet Name="CutterUsersGroup" EntityType="CMSDB_Model.CutterUsersGroup" />
+          <EntitySet Name="CutterDetailClass" EntityType="CMSDB_Model.CutterDetailClass" />
+          <EntitySet Name="Cutters" EntityType="CMSDB_Model.Cutters" />
+          <AssociationSet Name="FK_Cutters_CutterClass" Association="CMSDB_Model.FK_Cutters_CutterClass">
+            <End Role="CutterClass" EntitySet="CutterClass" />
+            <End Role="Cutters" EntitySet="Cutters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cutters_CutterDetailClass" Association="CMSDB_Model.FK_Cutters_CutterDetailClass">
+            <End Role="CutterDetailClass" EntitySet="CutterDetailClass" />
+            <End Role="Cutters" EntitySet="Cutters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cutters_CutterMaterial" Association="CMSDB_Model.FK_Cutters_CutterMaterial">
+            <End Role="CutterMaterial" EntitySet="CutterMaterial" />
+            <End Role="Cutters" EntitySet="Cutters" />
+          </AssociationSet>
+          <EntitySet Name="Cutter3DImages" EntityType="CMSDB_Model.Cutter3DImages" />
+          <EntitySet Name="PersonalInfo" EntityType="CMSDB_Model.PersonalInfo" />
+          <EntitySet Name="CutterElectricTestRecord" EntityType="CMSDB_Model.CutterElectricTestRecord" />
+          <EntitySet Name="CutterWorkStatus" EntityType="CMSDB_Model.CutterWorkStatus" />
+          <EntitySet Name="CuttersDetail" EntityType="CMSDB_Model.CuttersDetail" />
+          <AssociationSet Name="FK_CuttersDetail_Cutters" Association="CMSDB_Model.FK_CuttersDetail_Cutters">
+            <End Role="Cutters" EntitySet="Cutters" />
+            <End Role="CuttersDetail" EntitySet="CuttersDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuttersDetail_CutterWorkStatus" Association="CMSDB_Model.FK_CuttersDetail_CutterWorkStatus">
+            <End Role="CutterWorkStatus" EntitySet="CutterWorkStatus" />
+            <End Role="CuttersDetail" EntitySet="CuttersDetail" />
+          </AssociationSet>
+          <EntitySet Name="CutterEvents" EntityType="CMSDB_Model.CutterEvents" />
+          <EntitySet Name="CutterNotes" EntityType="CMSDB_Model.CutterNotes" />
+          <AssociationSet Name="FK_CuttersDetail_CutterEvents" Association="CMSDB_Model.FK_CuttersDetail_CutterEvents">
+            <End Role="CutterEvents" EntitySet="CutterEvents" />
+            <End Role="CuttersDetail" EntitySet="CuttersDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuttersDetail_CutterNotes" Association="CMSDB_Model.FK_CuttersDetail_CutterNotes">
+            <End Role="CutterNotes" EntitySet="CutterNotes" />
+            <End Role="CuttersDetail" EntitySet="CuttersDetail" />
+          </AssociationSet>
+          <EntitySet Name="CuttersInfo" EntityType="CMSDB_Model.CuttersInfo" />
+        </EntityContainer>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="CutterClass">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cutters" Relationship="CMSDB_Model.FK_Cutters_CutterClass" FromRole="CutterClass" ToRole="Cutters" />
+        </EntityType>
+        <EntityType Name="CutterImages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
+          <Property Name="ImagePath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CutterMaterial">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cutters" Relationship="CMSDB_Model.FK_Cutters_CutterMaterial" FromRole="CutterMaterial" ToRole="Cutters" />
+        </EntityType>
+        <EntityType Name="CutterUsersGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="GroupID" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CutterDetailClass">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ClassID" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cutters" Relationship="CMSDB_Model.FK_Cutters_CutterDetailClass" FromRole="CutterDetailClass" ToRole="Cutters" />
+        </EntityType>
+        <EntityType Name="Cutters">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClassID" Type="Int32" />
+          <Property Name="DetailClassID" Type="Int32" />
+          <Property Name="MaterialID" Type="Int32" />
+          <NavigationProperty Name="CutterClass" Relationship="CMSDB_Model.FK_Cutters_CutterClass" FromRole="Cutters" ToRole="CutterClass" />
+          <NavigationProperty Name="CutterDetailClass" Relationship="CMSDB_Model.FK_Cutters_CutterDetailClass" FromRole="Cutters" ToRole="CutterDetailClass" />
+          <NavigationProperty Name="CutterMaterial" Relationship="CMSDB_Model.FK_Cutters_CutterMaterial" FromRole="Cutters" ToRole="CutterMaterial" />
+          <NavigationProperty Name="CuttersDetail" Relationship="CMSDB_Model.FK_CuttersDetail_Cutters" FromRole="Cutters" ToRole="CuttersDetail" />
+        </EntityType>
+        <Association Name="FK_Cutters_CutterClass">
+          <End Type="CMSDB_Model.CutterClass" Role="CutterClass" Multiplicity="0..1" />
+          <End Type="CMSDB_Model.Cutters" Role="Cutters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CutterClass">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cutters">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cutters_CutterDetailClass">
+          <End Type="CMSDB_Model.CutterDetailClass" Role="CutterDetailClass" Multiplicity="0..1" />
+          <End Type="CMSDB_Model.Cutters" Role="Cutters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CutterDetailClass">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cutters">
+              <PropertyRef Name="DetailClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cutters_CutterMaterial">
+          <End Type="CMSDB_Model.CutterMaterial" Role="CutterMaterial" Multiplicity="0..1" />
+          <End Type="CMSDB_Model.Cutters" Role="Cutters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CutterMaterial">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cutters">
+              <PropertyRef Name="MaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Cutter3DImages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ClassID" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PersonalInfo">
+          <Key>
+            <PropertyRef Name="用户名" />
+            <PropertyRef Name="权限" />
+            <PropertyRef Name="活跃" />
+          </Key>
+          <Property Name="用户名" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="权限" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="邮箱" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="活跃" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="CutterElectricTestRecord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ElectricTestRecordID" Type="Int32" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
+          <Property Name="Value" Type="Double" />
+          <Property Name="TestLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DangerousValue" Type="Double" />
+        </EntityType>
+        <EntityType Name="CutterWorkStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="CuttersDetail" Relationship="CMSDB_Model.FK_CuttersDetail_CutterWorkStatus" FromRole="CutterWorkStatus" ToRole="CuttersDetail" />
+        </EntityType>
+        <EntityType Name="CuttersDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="UsersGroupID" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUseDate" Type="DateTime" Precision="3" />
+          <Property Name="ExpectLife" Type="Int32" />
+          <Property Name="WearProcess" Type="Double" />
+          <Property Name="WorkStatusID" Type="Int32" />
+          <Property Name="StartTime" Type="DateTime" Precision="3" />
+          <Property Name="StopTime" Type="DateTime" Precision="3" />
+          <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NoteID" Type="Int32" />
+          <Property Name="EventID" Type="Int32" />
+          <Property Name="ElectricTestRecordID" Type="Int32" />
+          <Property Name="Cutter3DImageID" Type="Int32" />
+          <Property Name="ImageID" Type="Int32" />
+          <NavigationProperty Name="Cutters" Relationship="CMSDB_Model.FK_CuttersDetail_Cutters" FromRole="CuttersDetail" ToRole="Cutters" />
+          <NavigationProperty Name="CutterWorkStatus" Relationship="CMSDB_Model.FK_CuttersDetail_CutterWorkStatus" FromRole="CuttersDetail" ToRole="CutterWorkStatus" />
+          <NavigationProperty Name="CutterEvents" Relationship="CMSDB_Model.FK_CuttersDetail_CutterEvents" FromRole="CuttersDetail" ToRole="CutterEvents" />
+          <NavigationProperty Name="CutterNotes" Relationship="CMSDB_Model.FK_CuttersDetail_CutterNotes" FromRole="CuttersDetail" ToRole="CutterNotes" />
+        </EntityType>
+        <Association Name="FK_CuttersDetail_Cutters">
+          <End Type="CMSDB_Model.Cutters" Role="Cutters" Multiplicity="1" />
+          <End Type="CMSDB_Model.CuttersDetail" Role="CuttersDetail" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Cutters">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CuttersDetail">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CuttersDetail_CutterWorkStatus">
+          <End Type="CMSDB_Model.CutterWorkStatus" Role="CutterWorkStatus" Multiplicity="0..1" />
+          <End Type="CMSDB_Model.CuttersDetail" Role="CuttersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CutterWorkStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CuttersDetail">
+              <PropertyRef Name="WorkStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CutterEvents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Event" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CuttersDetail" Relationship="CMSDB_Model.FK_CuttersDetail_CutterEvents" FromRole="CutterEvents" ToRole="CuttersDetail" />
+        </EntityType>
+        <EntityType Name="CutterNotes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CuttersDetail" Relationship="CMSDB_Model.FK_CuttersDetail_CutterNotes" FromRole="CutterNotes" ToRole="CuttersDetail" />
+        </EntityType>
+        <Association Name="FK_CuttersDetail_CutterEvents">
+          <End Type="CMSDB_Model.CutterEvents" Role="CutterEvents" Multiplicity="0..1" />
+          <End Type="CMSDB_Model.CuttersDetail" Role="CuttersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CutterEvents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CuttersDetail">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CuttersDetail_CutterNotes">
+          <End Type="CMSDB_Model.CutterNotes" Role="CutterNotes" Multiplicity="0..1" />
+          <End Type="CMSDB_Model.CuttersDetail" Role="CuttersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CutterNotes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CuttersDetail">
+              <PropertyRef Name="NoteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CuttersInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="模型图" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="编号" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="类别" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="详细类别" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="材料" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="实物图" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="拍摄时间" Type="DateTime" Precision="3" />
+          <Property Name="添加日期" Type="DateTime" Precision="3" />
+          <Property Name="活跃日期" Type="DateTime" Precision="3" />
+          <Property Name="预期寿命" Type="Int32" />
+          <Property Name="磨损进度" Type="Double" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CMSDB_ModelStoreContainer" CdmEntityContainer="CMSDB_Entities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="CMSDB_Model.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CutterClass">
+            <EntityTypeMapping TypeName="CMSDB_Model.CutterClass">
+              <MappingFragment StoreEntitySet="CutterClass">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CutterImages">
+            <EntityTypeMapping TypeName="CMSDB_Model.CutterImages">
+              <MappingFragment StoreEntitySet="CutterImages">
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CutterMaterial">
+            <EntityTypeMapping TypeName="CMSDB_Model.CutterMaterial">
+              <MappingFragment StoreEntitySet="CutterMaterial">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CutterUsersGroup">
+            <EntityTypeMapping TypeName="CMSDB_Model.CutterUsersGroup">
+              <MappingFragment StoreEntitySet="CutterUsersGroup">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CutterDetailClass">
+            <EntityTypeMapping TypeName="CMSDB_Model.CutterDetailClass">
+              <MappingFragment StoreEntitySet="CutterDetailClass">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cutters">
+            <EntityTypeMapping TypeName="CMSDB_Model.Cutters">
+              <MappingFragment StoreEntitySet="Cutters">
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="DetailClassID" ColumnName="DetailClassID" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cutter3DImages">
+            <EntityTypeMapping TypeName="CMSDB_Model.Cutter3DImages">
+              <MappingFragment StoreEntitySet="Cutter3DImages">
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonalInfo">
+            <EntityTypeMapping TypeName="CMSDB_Model.PersonalInfo">
+              <MappingFragment StoreEntitySet="PersonalInfo">
+                <ScalarProperty Name="活跃" ColumnName="活跃" />
+                <ScalarProperty Name="邮箱" ColumnName="邮箱" />
+                <ScalarProperty Name="权限" ColumnName="权限" />
+                <ScalarProperty Name="用户名" ColumnName="用户名" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CutterElectricTestRecord">
+            <EntityTypeMapping TypeName="CMSDB_Model.CutterElectricTestRecord">
+              <MappingFragment StoreEntitySet="CutterElectricTestRecord">
+                <ScalarProperty Name="DangerousValue" ColumnName="DangerousValue" />
+                <ScalarProperty Name="TestLocation" ColumnName="TestLocation" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="ElectricTestRecordID" ColumnName="ElectricTestRecordID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CutterWorkStatus">
+            <EntityTypeMapping TypeName="CMSDB_Model.CutterWorkStatus">
+              <MappingFragment StoreEntitySet="CutterWorkStatus">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CuttersDetail">
+            <EntityTypeMapping TypeName="CMSDB_Model.CuttersDetail">
+              <MappingFragment StoreEntitySet="CuttersDetail">
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="Cutter3DImageID" ColumnName="Cutter3DImageID" />
+                <ScalarProperty Name="ElectricTestRecordID" ColumnName="ElectricTestRecordID" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="StopTime" ColumnName="StopTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="WorkStatusID" ColumnName="WorkStatusID" />
+                <ScalarProperty Name="WearProcess" ColumnName="WearProcess" />
+                <ScalarProperty Name="ExpectLife" ColumnName="ExpectLife" />
+                <ScalarProperty Name="LastUseDate" ColumnName="LastUseDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UsersGroupID" ColumnName="UsersGroupID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CutterEvents">
+            <EntityTypeMapping TypeName="CMSDB_Model.CutterEvents">
+              <MappingFragment StoreEntitySet="CutterEvents">
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CutterNotes">
+            <EntityTypeMapping TypeName="CMSDB_Model.CutterNotes">
+              <MappingFragment StoreEntitySet="CutterNotes">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CuttersInfo">
+            <EntityTypeMapping TypeName="CMSDB_Model.CuttersInfo">
+              <MappingFragment StoreEntitySet="CuttersInfo">
+                <ScalarProperty Name="磨损进度" ColumnName="磨损进度" />
+                <ScalarProperty Name="预期寿命" ColumnName="预期寿命" />
+                <ScalarProperty Name="活跃日期" ColumnName="活跃日期" />
+                <ScalarProperty Name="添加日期" ColumnName="添加日期" />
+                <ScalarProperty Name="拍摄时间" ColumnName="拍摄时间" />
+                <ScalarProperty Name="实物图" ColumnName="实物图" />
+                <ScalarProperty Name="材料" ColumnName="材料" />
+                <ScalarProperty Name="详细类别" ColumnName="详细类别" />
+                <ScalarProperty Name="类别" ColumnName="类别" />
+                <ScalarProperty Name="编号" ColumnName="编号" />
+                <ScalarProperty Name="模型图" ColumnName="模型图" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
