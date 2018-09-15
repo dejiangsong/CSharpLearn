@@ -1,0 +1,10 @@
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Release\netcoreapp2.0\SocketServer.deps.json
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Release\netcoreapp2.0\SocketServer.runtimeconfig.json
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Release\netcoreapp2.0\SocketServer.runtimeconfig.dev.json
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Release\netcoreapp2.0\SocketServer.dll
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Release\netcoreapp2.0\SocketServer.pdb
+F:\dotnet\Study\Demo_Socket\SocketServer\obj\Release\netcoreapp2.0\SocketServer.csproj.CoreCompileInputs.cache
+F:\dotnet\Study\Demo_Socket\SocketServer\obj\Release\netcoreapp2.0\SocketServer.AssemblyInfoInputs.cache
+F:\dotnet\Study\Demo_Socket\SocketServer\obj\Release\netcoreapp2.0\SocketServer.AssemblyInfo.cs
+F:\dotnet\Study\Demo_Socket\SocketServer\obj\Release\netcoreapp2.0\SocketServer.dll
+F:\dotnet\Study\Demo_Socket\SocketServer\obj\Release\netcoreapp2.0\SocketServer.pdb

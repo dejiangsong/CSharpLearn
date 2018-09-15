@@ -1,0 +1,11 @@
+F:\dotnet\Study\Demo_Socket\SocketClient\bin\Debug\netcoreapp2.0\SocketClient.deps.json
+F:\dotnet\Study\Demo_Socket\SocketClient\bin\Debug\netcoreapp2.0\SocketClient.runtimeconfig.json
+F:\dotnet\Study\Demo_Socket\SocketClient\bin\Debug\netcoreapp2.0\SocketClient.runtimeconfig.dev.json
+F:\dotnet\Study\Demo_Socket\SocketClient\bin\Debug\netcoreapp2.0\SocketClient.dll
+F:\dotnet\Study\Demo_Socket\SocketClient\bin\Debug\netcoreapp2.0\SocketClient.pdb
+F:\dotnet\Study\Demo_Socket\SocketClient\obj\Debug\netcoreapp2.0\SocketClient.csprojAssemblyReference.cache
+F:\dotnet\Study\Demo_Socket\SocketClient\obj\Debug\netcoreapp2.0\SocketClient.csproj.CoreCompileInputs.cache
+F:\dotnet\Study\Demo_Socket\SocketClient\obj\Debug\netcoreapp2.0\SocketClient.AssemblyInfoInputs.cache
+F:\dotnet\Study\Demo_Socket\SocketClient\obj\Debug\netcoreapp2.0\SocketClient.AssemblyInfo.cs
+F:\dotnet\Study\Demo_Socket\SocketClient\obj\Debug\netcoreapp2.0\SocketClient.dll
+F:\dotnet\Study\Demo_Socket\SocketClient\obj\Debug\netcoreapp2.0\SocketClient.pdb

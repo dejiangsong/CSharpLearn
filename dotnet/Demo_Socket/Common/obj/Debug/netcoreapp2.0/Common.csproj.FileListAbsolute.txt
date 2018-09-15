@@ -1,0 +1,9 @@
+F:\dotnet\Study\Demo_Socket\Common\bin\Debug\netcoreapp2.0\Common.deps.json
+F:\dotnet\Study\Demo_Socket\Common\bin\Debug\netcoreapp2.0\Common.dll
+F:\dotnet\Study\Demo_Socket\Common\bin\Debug\netcoreapp2.0\Common.pdb
+F:\dotnet\Study\Demo_Socket\Common\obj\Debug\netcoreapp2.0\Common.csprojAssemblyReference.cache
+F:\dotnet\Study\Demo_Socket\Common\obj\Debug\netcoreapp2.0\Common.csproj.CoreCompileInputs.cache
+F:\dotnet\Study\Demo_Socket\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfoInputs.cache
+F:\dotnet\Study\Demo_Socket\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
+F:\dotnet\Study\Demo_Socket\Common\obj\Debug\netcoreapp2.0\Common.dll
+F:\dotnet\Study\Demo_Socket\Common\obj\Debug\netcoreapp2.0\Common.pdb

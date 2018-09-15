@@ -1,0 +1,22 @@
+F:\dotnet\Study\bin\Debug\netcoreapp2.0\Study.deps.json
+F:\dotnet\Study\bin\Debug\netcoreapp2.0\Study.runtimeconfig.json
+F:\dotnet\Study\bin\Debug\netcoreapp2.0\Study.runtimeconfig.dev.json
+F:\dotnet\Study\bin\Debug\netcoreapp2.0\Study.dll
+F:\dotnet\Study\bin\Debug\netcoreapp2.0\Study.pdb
+F:\dotnet\Study\obj\Debug\netcoreapp2.0\Study.csprojAssemblyReference.cache
+F:\dotnet\Study\obj\Debug\netcoreapp2.0\Study.csproj.CoreCompileInputs.cache
+F:\dotnet\Study\obj\Debug\netcoreapp2.0\Study.AssemblyInfoInputs.cache
+F:\dotnet\Study\obj\Debug\netcoreapp2.0\Study.AssemblyInfo.cs
+F:\dotnet\Study\obj\Debug\netcoreapp2.0\Study.dll
+F:\dotnet\Study\obj\Debug\netcoreapp2.0\Study.pdb
+F:\dotnet\Study\Study - 反射\Study\obj\Debug\netcoreapp2.0\Study.csprojAssemblyReference.cache
+F:\dotnet\Study\Study - 反射\Study\obj\Debug\netcoreapp2.0\Study.csproj.CoreCompileInputs.cache
+F:\dotnet\Study\Study - 反射\Study\obj\Debug\netcoreapp2.0\Study.AssemblyInfoInputs.cache
+F:\dotnet\Study\Study - 反射\Study\obj\Debug\netcoreapp2.0\Study.AssemblyInfo.cs
+F:\dotnet\Study\Study - 反射\Study\bin\Debug\netcoreapp2.0\Study.deps.json
+F:\dotnet\Study\Study - 反射\Study\bin\Debug\netcoreapp2.0\Study.runtimeconfig.json
+F:\dotnet\Study\Study - 反射\Study\bin\Debug\netcoreapp2.0\Study.runtimeconfig.dev.json
+F:\dotnet\Study\Study - 反射\Study\bin\Debug\netcoreapp2.0\Study.dll
+F:\dotnet\Study\Study - 反射\Study\bin\Debug\netcoreapp2.0\Study.pdb
+F:\dotnet\Study\Study - 反射\Study\obj\Debug\netcoreapp2.0\Study.dll
+F:\dotnet\Study\Study - 反射\Study\obj\Debug\netcoreapp2.0\Study.pdb

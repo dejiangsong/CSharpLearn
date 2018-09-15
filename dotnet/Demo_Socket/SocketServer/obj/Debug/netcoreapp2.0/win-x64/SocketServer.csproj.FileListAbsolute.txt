@@ -1,0 +1,17 @@
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Debug\netcoreapp2.0\win-x64\hostpolicy.dll
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Debug\netcoreapp2.0\win-x64\hostfxr.dll
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Debug\netcoreapp2.0\win-x64\SocketServer.exe
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Debug\netcoreapp2.0\win-x64\SocketServer.deps.json
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Debug\netcoreapp2.0\win-x64\SocketServer.runtimeconfig.json
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Debug\netcoreapp2.0\win-x64\SocketServer.runtimeconfig.dev.json
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Debug\netcoreapp2.0\win-x64\SocketServer.dll
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Debug\netcoreapp2.0\win-x64\SocketServer.pdb
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Debug\netcoreapp2.0\win-x64\Common.dll
+F:\dotnet\Study\Demo_Socket\SocketServer\bin\Debug\netcoreapp2.0\win-x64\Common.pdb
+F:\dotnet\Study\Demo_Socket\SocketServer\obj\Debug\netcoreapp2.0\win-x64\SocketServer.csprojAssemblyReference.cache
+F:\dotnet\Study\Demo_Socket\SocketServer\obj\Debug\netcoreapp2.0\win-x64\SocketServer.csproj.CoreCompileInputs.cache
+F:\dotnet\Study\Demo_Socket\SocketServer\obj\Debug\netcoreapp2.0\win-x64\SocketServer.AssemblyInfoInputs.cache
+F:\dotnet\Study\Demo_Socket\SocketServer\obj\Debug\netcoreapp2.0\win-x64\SocketServer.AssemblyInfo.cs
+F:\dotnet\Study\Demo_Socket\SocketServer\obj\Debug\netcoreapp2.0\win-x64\SocketServer.csproj.CopyComplete
+F:\dotnet\Study\Demo_Socket\SocketServer\obj\Debug\netcoreapp2.0\win-x64\SocketServer.dll
+F:\dotnet\Study\Demo_Socket\SocketServer\obj\Debug\netcoreapp2.0\win-x64\SocketServer.pdb
